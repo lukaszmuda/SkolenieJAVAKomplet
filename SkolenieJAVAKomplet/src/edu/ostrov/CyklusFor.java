@@ -24,12 +24,8 @@ public class CyklusFor {
 		for(int i = 295; i != 285;i--){
 			System.out.print("klop,");
 		}	
-		
-	
+			
 		System.out.println("");
 		System.out.println("Kto je tam?");
-		
-
 	}
-
 }

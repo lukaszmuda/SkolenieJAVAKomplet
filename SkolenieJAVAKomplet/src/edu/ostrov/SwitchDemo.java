@@ -67,7 +67,5 @@ public class SwitchDemo {
 		default:
 			System.out.println("zly den v tyzdni");
 		}
-
 	}
-
 }
