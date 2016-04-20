@@ -1,4 +1,4 @@
-package edu.core;
+package edu.core.vetvenie;
 import javax.swing.JOptionPane;
 
 /**

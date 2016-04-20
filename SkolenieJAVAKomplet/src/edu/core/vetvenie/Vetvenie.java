@@ -1,4 +1,4 @@
-package edu.core;
+package edu.core.vetvenie;
 
 public class Vetvenie {
 
