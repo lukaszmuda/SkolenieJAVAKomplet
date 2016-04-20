@@ -24,7 +24,7 @@ public class KresliaciPanel extends JPanel{
 		g.setColor(Color.GREEN);
 		g.drawString("Nazdar", 120, 70);
 		g.setColor(Color.WHITE);
-		g.drawString("Èau", 10, 210);
+		g.drawString("ÄŒau", 10, 210);
 		
 		//kreslenie ciar
 		g.drawLine(30, 30, 200, 90);
