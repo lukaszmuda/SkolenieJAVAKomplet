@@ -12,6 +12,7 @@ import java.io.InputStreamReader;
 public class PoleU1 {
 
 	public static void main(String[] args) {
+		//konstanta v programe (final) -> moze byt inicializovana iba raz v programe
 		final int POCET_STUDDENTOV = 5;
 		int[] znamky = new int[POCET_STUDDENTOV];
 		try {
