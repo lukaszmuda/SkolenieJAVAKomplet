@@ -1,0 +1,92 @@
+********************************
+*             JDBC             *
+********************************
+ - Java Database Connectivity
+ - API, ktore prepaja prog.jazyk a databazy
+ 	- zahrna v sebe vytvorenie connection do DB
+ 	- vytvorenie SQL prikazu
+ 	- vykonanie SQL prikazu
+ 	- prezeranie a modifikacia vysledkov prikazu
+ 
+ - spolocne JDBC komponenty (triedy, interfaces)
+ 	- DriverManager - 
+ 	- Driver
+ 	- Connection - interface s metodami na komunikaciu s DB
+ 	- Statement - pomocou objektu tohto interface-u vykoname SQL prikaz
+ 	- ResultSet - v tomto objekte sa nachdzaju data ktore dostaneme z DB na zaklade Statementu
+ 	- SQLException
+ 	
+*******************************
+*              SQL            *
+*******************************
+
+Vytvorenie DB skola
+SQL> CREATE DATABASE skola
+----------------------------
+Vymazanie DB skola
+SQL> DROP DATABASE skola
+----------------------------
+Vytvorenie tabulky student
+SQL> CREATE TABLE student
+(
+	id INT NOT NULL,
+	vek INT NOT NULL,
+	meno VARCHAR(255),
+	priezvisko VARCHAR(255),
+	PRIMARY KEY (id)
+);
+---------------------------
+Vlozenie zaznamu do TB student
+SQL> INSERT INTO student VALUES(100, 30, 'Lukas', 'Zmuda');
+
+*******************
+* Instalacia MySQL*
+*******************
+- stiahnut instalator pre prislusny OS z: http://dev.mysql.com/downloads/mysql/
+
+**********************************
+*     Spustenie MySQL            *
+**********************************
+spustenie Servra
+C:\Program Files\MySQL\MySQL Server 5.5\bin\mysqld
+-------------------------
+spustenie MySQL
+C:\Program Files\MySQL\MySQL Server 5.5\bin\mysql -h localhost -u root -p
+zadame heslo a dostaneme prompt
+mysql>
+-------------------------
+zobrazenie DB
+mysql> SHOW DATABASES
+-------------------------
+pouzitie DB
+mysql> USE nazovDB
+-------------------------
+ukoncenie mysql
+mysql> exit
+-------------------------
+
+**********************************
+*    Vytvorenie JDBC aplikacie   *
+**********************************
+1. Import JDBC balicky
+	 - import java.sql.*
+2. Registracia JDBC drivera
+	 - stiahnut zo stranky: https://dev.mysql.com/downloads/connector/j/
+	 - rozbalit subor.jar
+	 - v eclipse pravym na projekt->Build Path ->Add external archive
+	 - v programe ho najprv musime zaregistrovat aby sme ho mohli pouzit
+	 - pomocou metody Class.forName(), kde parameter je driver
+3. Vytvorenie connection
+	 - pomocou metody getConnection(), ktora je volana na DriverManager (DriverManager.getConnection())
+	 - ako parameter je URL format v zavislosti od RDBMS
+	 ------------------------------------------------------------------------------------------------
+	 |RDBMS    |JDBC driver name                 |URL format										|
+	 ------------------------------------------------------------------------------------------------
+	 |MySQL     com.mysql.jdbc.Driver             jdbc:mysql://hostname/databaseName				|
+	 |ORACLE    oracle.jdbc.driver.OracleDriver   jdbc:oracle:thin:@hostname:portNumber:databaseName|
+	 |DB2		COM.ibm.db2.jdbc.net.DB2Driver	  jdbc:db2:hostname:portNumber/databaseName			|
+	 |Sybase	com.sybase.jdbc.SybDriver		  jdbc:sybase:Tds:hostname:portNumber/databaseName  |
+	 ------------------------------------------------------------------------------------------------
+	 - v ramci metody getConnection zadavame aj username aj password do DB
+4. Ukoncenie connection
+	 - pomocou metody close() zavolanej na objekte triedy Connection
