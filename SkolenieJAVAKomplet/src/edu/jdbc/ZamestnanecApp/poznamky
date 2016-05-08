@@ -1,0 +1,29 @@
+********************************
+|      Sprava zamestnancov     |
+********************************
+
+Architektura Aplikacie
+***********************
+
++---------+      +--------------+      +--------+
+|Swing GUI| <--> |ZamestnanecDAO| <--> |Databaza|
++---------+      +--------------+      +--------+
+DAO(Data Access Object)
+-pomocna trieda, ktora zabezpecuje JDBC volania databazy
+
+Vytvorenie DB a tabulky zamestnanci
+***********************************
+
+script createDBscript.sql
+
+spustenie v mysql
+SQL>SOURCE F:/createDBscript.sql
+--------------------------------
+
+Vyvoj aplikacie
+***************
+ 1. Vytvorenie DAO
+ 2. Design GUI
+ 3. GUI Event Handling
+ 4. Vytvorenie tabulky v GUI - JTable
+
