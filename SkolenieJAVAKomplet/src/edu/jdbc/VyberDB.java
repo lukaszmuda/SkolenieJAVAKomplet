@@ -16,7 +16,7 @@ public class VyberDB {
 
 		Connection conn = null;
 		try{
-			Class.forName(JDBC_DRIVER);
+			//Class.forName(JDBC_DRIVER);
 			
 			System.out.println("Pripajam sa na DB student ...");
 			conn = DriverManager.getConnection(DB_URL, USER, PASS);
