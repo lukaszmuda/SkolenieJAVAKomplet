@@ -23,7 +23,24 @@ SQL>SOURCE F:/createDBscript.sql
 Vyvoj aplikacie
 ***************
  1. Vytvorenie DAO
+    - triedy: Zamestnanec, ZamestnanecDAO
  2. Design GUI
+    - trieda: ZamestnanecUI
  3. GUI Event Handling
+    	- vytvorenie DAO
+    	- vyhladanie a vypis najdeni na konzolu pri ActionPerformed na tlacidle hladaj
+    	- ked nie je nic v TF tak vrati kompletnu tabulku
  4. Vytvorenie tabulky v GUI - JTable
+ 	- vytvorenie modelu dat, ktore ich posunu potom do JTable
+ 	- model vytvorime rozsirenim triedy AbstractTableModel, kde musime implementovat urcite metody
+ 5. Vytvorenie formulara pre pridanie Zamestnanca
+    a.) DAO - pridanie metody pre pridanie zamestnanca do databazy
+    b.) ZamestnanecForm - vytvorenie Formu pre pridanie zamestnanca, event handling
+    	- vytvorime dialogove okno, ako layout nastavime JGoodies form
+    	- je potrebne pridat jar JGoodies do appky
+    c.) Pridanie tlacidla do hlavnej appky	
+    	- pridame panel a do neho tlacidlo na pridanie zamestnanca
+ 6. Update zamestnanca
+ 	a.) DAO - pridanie metody pre update existujuceho zamestnanca
+ 	  
 

@@ -19,6 +19,9 @@ public class Zamestnanec {
 		this.email = email;
 		this.plat = plat;
 	}
+	public Zamestnanec(String priezvisko, String meno, String email, BigDecimal plat){
+		this(0,priezvisko, meno, email, plat);
+	}
 
 	public int getId() {
 		return id;

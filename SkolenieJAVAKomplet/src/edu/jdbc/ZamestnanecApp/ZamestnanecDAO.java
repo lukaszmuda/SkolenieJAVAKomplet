@@ -33,6 +33,22 @@ public class ZamestnanecDAO {
 		System.out.println("Pripojenie na DB uspesne ...");
 	}
 	
+	public void pridajZamestnanca(Zamestnanec zam)throws Exception{
+		PreparedStatement stm = null;
+		
+		try{
+			stm = conn.prepareStatement("INSERT INTO zamestnanci (meno, priezvisko, email, plat) values (?, ?, ?, ?)");
+			stm.setString(1, zam.getMeno());
+			stm.setString(2, zam.getPriezvisko());
+			stm.setString(3, zam.getEmail());
+			stm.setBigDecimal(4, zam.getPlat());
+			
+			stm.executeUpdate();
+		}finally{
+			close(stm);
+		}
+	}
+	
 	public List<Zamestnanec> getZamestnanci() throws Exception{
 		
 		List<Zamestnanec> zoznam = new ArrayList<Zamestnanec>();
@@ -84,6 +100,12 @@ public class ZamestnanecDAO {
 		
 	}
 	
+	private void close(PreparedStatement stm)throws SQLException{
+		if(stm != null){
+			stm.close();
+		}
+	}
+
 	private static void close(Connection conn, Statement stm, ResultSet rs)throws SQLException{
 		if(conn != null){
 			conn.close();
