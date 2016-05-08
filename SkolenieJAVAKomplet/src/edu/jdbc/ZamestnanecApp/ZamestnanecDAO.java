@@ -111,7 +111,8 @@ public class ZamestnanecDAO {
 	
 	public static void main(String[] args) throws Exception{
 		ZamestnanecDAO dao = new ZamestnanecDAO();
-		System.out.println(dao.najdiZamestnanca("Thom"));
-		System.out.println(dao.getZamestnanci());
+		
+		System.out.println(dao.najdiZamestnanca("thom"));
+		
 	}
 }

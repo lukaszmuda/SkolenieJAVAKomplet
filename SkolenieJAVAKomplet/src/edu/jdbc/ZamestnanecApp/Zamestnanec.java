@@ -59,6 +59,10 @@ public class Zamestnanec {
 	public void setPlat(BigDecimal plat) {
 		this.plat = plat;
 	}
+	@Override
+	public String toString() {
+		return "" + this.id + ", " + this.priezvisko + ", " + this.meno + ", " + this.email + ", " + this.plat;
+	}
 	
 	
 	
